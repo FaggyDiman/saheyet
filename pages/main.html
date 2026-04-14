@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ lang }}">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,17 @@
 	<link rel="stylesheet" href="{{ url_for('static', path='colors.css') }}">
 </head>
 <body>
-	
 
 <div class="overlay" id="overlay"></div>
 <button class="menu-toggle" id="menuBtn">☰</button>
 <aside class="sidescreen" id="sideScreen">
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, commodi. Ad vitae commodi, quos incidunt sunt officia cumque expedita minus placeat adipisci harum neque provident, at dolorem voluptatum cum earum! Quo totam esse facilis, recusandae, ducimus magnam fugit officiis animi modi, aliquid praesentium? Fugiat ipsa, impedit ratione dicta ducimus quidem rerum fugit aliquid fuga harum tempora! Amet ex tempore doloremque dolor possimus veritatis omnis, odit maxime porro adipisci error eius ducimus! Quas velit, quibusdam in commodi, at delectus magnam blanditiis provident, dolores optio ex. Quia pariatur amet expedita ex reprehenderit temporibus. Repellendus libero minima omnis autem! Magni quis itaque odio, dolorem voluptate ex nemo veritatis voluptatem doloremque explicabo est. Tempora, rem ipsam! Culpa esse magni porro praesentium similique. Sapiente id quis blanditiis eveniet doloribus praesentium voluptatum eum soluta. Cupiditate totam in dolor voluptates, non consequatur dolorum. Est eius veniam soluta ratione, accusantium omnis aspernatur unde suscipit, nihil adipisci hic iusto ea harum dicta quis, voluptate magni eos error recusandae nisi tempora! Dignissimos impedit temporibus saepe, eveniet magnam maiores beatae, minus unde quos magni ipsum. Accusamus iste sed voluptatum adipisci dolorem minima. Nemo minima quis necessitatibus asperiores? Cum vero exercitationem sequi eveniet ad impedit, dolores explicabo quas accusantium sapiente ab aspernatur illo dolor, quis est alias odit corporis, repudiandae porro? Enim numquam suscipit velit iste repudiandae aspernatur alias molestiae reprehenderit dolorum harum et necessitatibus, magni similique eligendi quas eos perferendis corrupti omnis nobis voluptatem. Exercitationem blanditiis et esse nam distinctio deleniti accusantium sed, doloremque, maxime similique vel? Maiores quidem temporibus at aperiam aliquam fuga optio a quasi cumque, expedita illum doloribus dolore, similique accusantium hic et eius reprehenderit blanditiis ipsum. Quod facilis mollitia repudiandae doloremque ex vel unde placeat officia minima perspiciatis provident rerum odio, impedit repellendus, ratione explicabo esse. Laudantium vitae vero minima, quia earum corporis quae architecto blanditiis, molestiae doloribus illum, odit explicabo eligendi voluptas dolor quam! Fugit accusantium ratione repellendus similique corporis modi, voluptatem iste odit incidunt ipsum earum, tempore eaque delectus adipisci voluptate distinctio architecto rerum? Quam, vel? Atque rerum laborum est illo sunt obcaecati praesentium, magni rem sit, omnis impedit voluptatem debitis perferendis! Ea sed repellendus possimus perferendis eligendi deserunt minima at nihil quidem est consequuntur, molestiae placeat corporis facere, aut illum vel similique architecto, fuga quibusdam. Hic ut ea quasi sequi atque deleniti voluptate, quae aperiam expedita labore vel odit facere at sint dicta et, id qui nulla. Quia modi, velit enim ratione asperiores dicta, quisquam neque perferendis accusamus dolores sunt assumenda perspiciatis fugit et totam cum consequatur in distinctio impedit explicabo temporibus exercitationem alias laboriosam. Asperiores consectetur cumque vitae consequuntur ea nemo corrupti officiis, eligendi facilis possimus repellendus, mollitia hic beatae provident ipsam labore totam perferendis, animi nulla magni velit dicta similique? Aperiam temporibus, provident id nam voluptatibus laborum? Voluptatibus ullam saepe cum, natus maiores officiis tenetur sit tempore temporibus quas cumque blanditiis, nihil itaque officia quis accusamus iste pariatur atque animi quo sunt autem numquam? Dolor, nisi pariatur soluta eius dolorum non, delectus ex labore voluptatum, facere accusantium quisquam nobis sint vitae reiciendis.</div>
+    <div class="portrait-block">
+        <div class="health-text">{{ health_text }}</div>
+    </div>
+
+    <div class="lang-toggle-wrapper">
+        <a id="langToggle" class="lang-toggle" href="/toggle-language">Change language</a>
+    </div>
 </aside>
 
 <main class="mainsheet">
