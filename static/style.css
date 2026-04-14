@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle, #3d321f 0%, #2c2416 60%, #1a150d 100%);
+    background-attachment: fixed;
+    font-family: 'Times New Roman', serif;
+    overflow-x: hidden; 
+}
+
+/* --- MAINSHEET --- */
+.mainsheet {
+    width: 60vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #bfa67a; /* Чуть темнее папируса */
+    background-image: 
+        linear-gradient(to bottom, rgba(0,0,0,0.1), transparent),
+        url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    box-shadow: 0 0 40px rgba(0,0,0,0.7), inset 0 0 60px rgba(0,0,0,0.3);
+    padding: 1rem;
+    padding-top: 30px;
+    color: #1a150d;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- SIDESCREEN (Desktop) --- */
+.sidescreen {
+    position: fixed;
+    left: 1vw;
+    top: 2vh; 
+    width: 18vw;
+
+    height: 96vh; 
+    
+    background-color: #e2c08d;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    border: 1px solid #d4af37;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(212, 175, 55, 0.2);
+    padding: 10px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+    
+    overflow-y: auto; 
+}
+
+/* --- МОБИЛЬНЫЕ ЭЛЕМЕНТЫ --- */
+.menu-toggle {
+    display: none; /* Скрыта на ПК */
+    position: fixed;
+    top: 4px;
+    left: 4px;
+    z-index: 1000;
+    color: #00000035;
+	background: transparent;
+    padding: 5px 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 90;
+}
+
+.overlay.active ~ .menu-toggle {
+    display: none !important;
+}
+
+/* --- АДАПТАЦИЯ ПОД ТЕЛЕФОН --- */
+@media (max-width: 1024px) {
+    .mainsheet {
+        width: 100vw;
+        padding: 1rem;
+        padding-top: 70px;
+    }
+
+    .sidescreen {
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 85vw;
+        transform: translateX(-100%); /* Прячем за экран слева */
+        border-right: 3px solid #d4af37;
+    }
+
+    /* Когда меню активно */
+    .sidescreen.active {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}
