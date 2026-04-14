@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -29,11 +29,7 @@ async def read_items(request: Request):
     return templates.TemplateResponse(
         request,
         "main.html",
-        {
-            "request": request,
-            "lang": lang,
-            "health_text": loc.get("health_good"),
-        },
+        {"request": request, "lang": lang, "loc": loc},
     )
 
 
@@ -42,6 +38,11 @@ async def toggle_language(request: Request):
     current_lang = request.cookies.get("lang", "ru")
     next_lang = "en" if current_lang == "ru" else "ru"
 
-    response = RedirectResponse(url="/", status_code=303)
+    loc = create_localization(next_lang)
+    response = templates.TemplateResponse(
+        request,
+        "main.html",
+        {"request": request, "lang": next_lang, "loc": loc},
+    )
     response.set_cookie(key="lang", value=next_lang, max_age=31536000, path="/")
     return response

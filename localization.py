@@ -3,39 +3,45 @@ import os
 
 
 class Localization:
+    _cache = {}
+
     def __init__(self, locales_dir="localization", default_lang="ru"):
         self.locales_dir = locales_dir
         self.default_lang = default_lang
         self.current_lang = default_lang
-        self.translations = {}
 
-        self.load_language(default_lang)
+        self.translations = self._load(default_lang)
+        self.default_translations = self.translations
 
-    def load_language(self, lang):
+    def _load(self, lang):
+        if lang in self._cache:
+            return self._cache[lang]
+
         path = os.path.join(self.locales_dir, f"{lang}.json")
 
         if not os.path.exists(path):
             raise FileNotFoundError(f"Language file not found: {path}")
 
         with open(path, "r", encoding="utf-8") as f:
-            self.translations = json.load(f)
+            data = json.load(f)
 
-        self.current_lang = lang
+        self._cache[lang] = data
+        return data
 
     def set_language(self, lang):
-        self.load_language(lang)
+        self.translations = self._load(lang)
+        self.current_lang = lang
 
-    def get(self, key, **kwargs):
+    def t(self, key, **kwargs):
+
         text = self.translations.get(key)
 
         if text is None:
-            # fallback
-            default_path = os.path.join(self.locales_dir, f"{self.default_lang}.json")
-            with open(default_path, "r", encoding="utf-8") as f:
-                default_translations = json.load(f)
-            text = default_translations.get(key, key)
+            text = self.default_translations.get(key, f"[{key}]")
 
-        try:
-            return text.format(**kwargs)
-        except Exception:
-            return text
+        if kwargs:
+            try:
+                text = text.format(**kwargs)
+            except KeyError:
+                pass
+        return text

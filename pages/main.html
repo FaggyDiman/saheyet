@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SAHEYET RPG</title>
-	<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', path='colors.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAHEYET RPG</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='colors.css') }}">
 </head>
 <body>
 
-<div class="overlay" id="overlay"></div>
-<button class="menu-toggle" id="menuBtn">☰</button>
-<aside class="sidescreen" id="sideScreen">
-    <div class="portrait-block">
-        <div class="health-text">{{ health_text }}</div>
-    </div>
+    <!-- Затемнение -->
+    <div class="overlay" id="overlay"></div>
 
-    <div class="lang-toggle-wrapper">
-        <a id="langToggle" class="lang-toggle" href="/toggle-language">Change language</a>
-    </div>
-</aside>
+    <!-- Кнопка меню -->
+    <button class="menu-toggle" id="menuBtn" type="button">☰</button>
 
-<main class="mainsheet">
-    <article class="content-block">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum deleniti distinctio eum? Aperiam est molestiae voluptas vel. Pariatur mollitia, dolore ab magni doloremque cumque adipisci impedit ducimus illo libero velit. Delectus nihil fugit illo provident dolorum hic vel accusamus incidunt eos repudiandae? Deleniti distinctio voluptates voluptate perferendis! Tempora incidunt debitis rem veniam exercitationem laboriosam architecto consequuntur quo, adipisci quibusdam esse ducimus iure cum, quidem alias minima? Ipsum obcaecati distinctio nulla magnam dolore, earum amet quidem numquam officia laboriosam. Veritatis sapiente error eligendi consequatur amet voluptas animi nesciunt, sequi, perspiciatis libero sit a nobis culpa! Explicabo suscipit aperiam voluptate autem, reiciendis soluta placeat earum, quasi eaque itaque molestiae alias error, asperiores excepturi officia culpa maxime corrupti laborum nam ipsam odit animi? Deserunt repellat, vitae autem eum laudantium ducimus excepturi ratione voluptates? Totam doloribus accusantium quam omnis quisquam, at aliquam minima porro autem maxime reiciendis rem placeat quas, maiores deserunt magnam nesciunt veritatis nihil asperiores distinctio quo sequi, repellendus hic! Harum possimus maiores iusto, repellendus laudantium odit nisi fugiat eum enim mollitia ab rerum provident inventore temporibus reprehenderit eveniet expedita sit. Adipisci iure, cum tempora vero corrupti voluptas modi impedit, atque sunt autem culpa quo eos sit? Distinctio voluptatem nisi adipisci maxime doloremque assumenda dolor laborum animi, exercitationem eaque ad soluta architecto ullam necessitatibus reprehenderit, quis repellat laboriosam. Voluptatem pariatur modi possimus blanditiis illum, quia tempore beatae in autem inventore, vitae minus officia reiciendis, necessitatibus veritatis. Laudantium minus repudiandae temporibus quod distinctio quas eligendi velit eos explicabo quibusdam magni, ratione ad perspiciatis a accusantium similique id rem nulla maxime. Aliquam veniam assumenda sapiente fugiat similique repellat sit quam vero rem sequi, rerum dicta quo excepturi cumque in deserunt inventore animi doloribus corporis corrupti suscipit? Cum aliquam quam laudantium reprehenderit sint quisquam, cupiditate illum iure, debitis nobis aspernatur harum, quis qui ullam consequatur voluptatem iste provident ex tempora similique. Vel animi sint, facere vero nam quo ea aspernatur at esse molestiae modi quod quae rerum consequatur itaque a accusantium sed. Temporibus explicabo sequi animi labore, neque eum assumenda dolore aliquam, enim, quia quam sed. Delectus recusandae iure dolor sint similique quibusdam deleniti velit? Beatae provident in ipsum magnam quam, laborum sapiente voluptatum fugiat nemo neque magni aliquam quia aut praesentium iste alias sequi aperiam doloribus obcaecati velit enim. Natus dolorem cupiditate saepe voluptate nemo. Veritatis obcaecati est dolorum praesentium consequuntur autem mollitia dicta et porro ex repellat adipisci ipsum veniam dignissimos omnis, corrupti officiis! Quos quaerat porro voluptatum architecto repellat eveniet eius unde asperiores numquam possimus, molestias at dicta aut ipsum amet voluptate excepturi corrupti voluptatibus iste. Quibusdam, voluptas libero porro consectetur impedit distinctio qui rerum! Magnam atque maxime nemo nam officiis. Neque cupiditate eligendi nesciunt officiis maxime modi, unde nobis nisi odit reiciendis atque enim quia, non repellendus reprehenderit laboriosam distinctio perferendis cum ab aliquid, consequuntur tempora dolor illo! Saepe doloribus, molestias earum omnis inventore placeat. Quasi iste amet, natus quo, modi explicabo possimus obcaecati eos labore autem minus dicta praesentium unde libero iure distinctio odio exercitationem! A recusandae blanditiis dolorem voluptatibus!
-    </article>
-</main>
-<script defer src="{{ url_for('static', path='main.js') }}"></script>
+    <!-- Боковая панель -->
+    <aside class="sidescreen" id="sideScreen">
+        <div class="portrait-block">
+            <div class="health-text">
+                {{ loc.t("health_good") }}
+            </div>
+        </div>
+
+        <div class="lang-toggle-wrapper">
+            <a 
+                id="langToggle" 
+                class="lang-toggle" 
+                href="/toggle-language"
+            >
+                {{ "Change language" if lang == "ru" else "Сменить язык" }}
+            </a>
+        </div>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="mainsheet">
+        <article class="content-block">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laborum deleniti distinctio eum? Aperiam est molestiae voluptas vel.
+            </p>
+        </article>
+    </main>
+
+    <!-- Скрипты -->
+    <script defer src="{{ url_for('static', path='main.js') }}"></script>
+
 </body>
 </html>
