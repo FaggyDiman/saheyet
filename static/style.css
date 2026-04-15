@@ -73,6 +73,49 @@ body {
     opacity: 0.85;
 }
 
+.location-panel {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.location-panel h2 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.loc-btn {
+    display: block;
+    width: auto;
+    margin: 1rem 0 1rem 0;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: rgba(80, 80, 80, 0.18);
+    border-radius: 4px;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.loc-btn:hover {
+    background: rgba(80, 80, 80, 0.28);
+    border-color: rgba(0, 0, 0, 0.35);
+}
+
+.loc-btn.append {
+    background: rgba(80, 80, 80, 0.18);
+}
+
+.loc-btn.append:hover {
+    background: rgba(80, 80, 80, 0.28);
+}
+
+.location-card {
+    padding: 1rem;
+}
+
 /* --- МОБИЛЬНЫЕ ЭЛЕМЕНТЫ --- */
 .menu-toggle {
     display: none; /* Скрыта на ПК */

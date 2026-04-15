@@ -1,0 +1,3 @@
+{% macro loc_button(name, action, label) -%}
+<button type="button" class="loc-btn{% if action == 'append' %} append{% endif %}" data-location-name="{{ name }}" data-location-action="{{ action }}">{{ label }}</button>
+{%- endmacro %}

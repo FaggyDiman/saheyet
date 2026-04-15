@@ -3,5 +3,11 @@
     "health_good": "You feel good",
     "health_normal": "You are doing okay",
     "health_bad": "You are still standing",
-    "health_very_bad": "You are about to fall"
+    "health_very_bad": "You are about to fall",
+    "loc_cave_title": "Cave",
+	"loc_cave_desc": "Dis is caev",
+	"loc_forest_title": "forest",
+	"loc_forest_desc": "dios est forestah",
+    "loc_forest_to_cave": "but i lov roks",
+	"loc_cave_to_forest": "actuly i laev wood"
 }

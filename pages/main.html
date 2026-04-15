@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='colors.css') }}">
 </head>
+{% from 'macros.html' import loc_button %}
 <body>
 
     <!-- Затемнение -->
@@ -17,6 +18,8 @@
     <!-- Кнопка меню -->
     <button class="menu-toggle" id="menuBtn" type="button">☰</button>
 
+
+
     <!-- Боковая панель -->
     <aside class="sidescreen" id="sideScreen">
         <div class="portrait-block">
@@ -24,7 +27,6 @@
                 {{ loc.t("health_good") }}
             </div>
         </div>
-
         <div class="lang-toggle-wrapper">
             <a 
                 id="langToggle" 
@@ -37,13 +39,9 @@
     </aside>
 
     <!-- Основной контент -->
-    <main class="mainsheet">
-        <article class="content-block">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Laborum deleniti distinctio eum? Aperiam est molestiae voluptas vel.
-            </p>
-        </article>
+    <main class="mainsheet" id="mainsheet" data-default-location="{{ active_location }}" data-extra-location="{{ extra_location }}">
+        <div id="locationContainer" class="location-area"></div>
+        <div id="appendContainer" class="location-area"></div>
     </main>
 
     <!-- Скрипты -->
