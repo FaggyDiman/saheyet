@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 from fastapi import Body, FastAPI, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
@@ -72,19 +72,7 @@ async def toggle_language(request: Request):
     current_lang = request.cookies.get("lang", "ru")
     next_lang = "en" if current_lang == "ru" else "ru"
 
-    loc = create_localization(next_lang)
-    response = templates.TemplateResponse(
-        request,
-        "main.html",
-        {
-            "request": request,
-            "lang": next_lang,
-            "loc": loc,
-            "active_location": request.cookies.get("main_loc", DEFAULT_LOCATION),
-            "extra_location": request.cookies.get("extra_loc", ""),
-            "locations": list(LOCATIONS.keys()),
-        },
-    )
+    response = RedirectResponse(url="/")
     response.set_cookie(key="lang", value=next_lang, max_age=31536000, path="/")
     return response
 
