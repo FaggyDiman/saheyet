@@ -175,3 +175,56 @@ body {
         display: block;
     }
 }
+
+/* --- Изображения --- */
+.portrait {
+    display: block;
+    max-width: 95%;
+    height: auto;
+    margin: 0rem auto;
+    padding: 0px;
+    background-color: #e2c08d;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    border: 1px solid #d4af37; /* Золотистая внутренняя рамка */
+    outline: 2px solid #3d321f; /* Темная внешняя рамка */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+}
+
+/* --- SIDE NAVIGATION --- */
+.side-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 8px;
+}
+
+.side-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #1a150d;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.side-nav-btn.active {
+    opacity: 1;
+}
+
+.side-view-header {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.side-view {
+    display: none;
+}
+
+.side-view.active {
+    display: block;
+}

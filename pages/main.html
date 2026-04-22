@@ -22,19 +22,31 @@
 
     <!-- Боковая панель -->
     <aside class="sidescreen" id="sideScreen">
-        <div class="portrait-block">
-            <div class="health-text">
-                {{ loc.t("health_good") }}
+        <!-- Навигация сверху -->
+        <nav class="side-nav">
+            <button class="side-nav-btn active" data-view="status" >{{loc.t("nav_main")}}</button>
+            <button class="side-nav-btn" data-view="settings">{{loc.t("nav_settings")}}</button>
+        </nav>
+
+        <!-- Вкладка: Основа -->
+        <div id="side-view-status" class="side-view active">
+            <div class="portrait-block">
+                <img src="{{url_for('static', path='images/' + player_state.portrait)}}" class="portrait" alt="Knight" style="width: 180px; height: auto; ">
+                <div style="text-align: center; font-size: 0.8rem; margin-top: 10px;">
+                    <a class="{{ player_state.health_commentary_stylecolor }}">
+                        {{ loc.t(player_state.health_commentary) }}
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="lang-toggle-wrapper">
-            <a 
-                id="langToggle" 
-                class="lang-toggle" 
-                href="/toggle-language"
-            >
-                {{ "Change language" if lang == "ru" else "Сменить язык" }}
-            </a>
+
+        <!-- Вкладка:  -->
+        <div id="side-view-settings" class="side-view">
+            <div class="lang-toggle-wrapper">
+                <a id="langToggle" class="lang-toggle" href="/toggle-language">
+                    {{ "Change language" if lang == "ru" else "Сменить язык" }}
+                </a>
+            </div>
         </div>
     </aside>
 

@@ -1,5 +1,5 @@
-import json
 import os
+import yaml
 
 
 class Localization:
@@ -17,13 +17,13 @@ class Localization:
         if lang in self._cache:
             return self._cache[lang]
 
-        path = os.path.join(self.locales_dir, f"{lang}.json")
+        path = os.path.join(self.locales_dir, f"{lang}.yml")
 
         if not os.path.exists(path):
             raise FileNotFoundError(f"Language file not found: {path}")
 
         with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            data = yaml.safe_load(f) or {}
 
         self._cache[lang] = data
         return data

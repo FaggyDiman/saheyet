@@ -90,8 +90,33 @@ window.addEventListener('load', function () {
         });
     }
 
+    function initSideNav() {
+        const navBtns = document.querySelectorAll('.side-nav-btn');
+        const views = document.querySelectorAll('.side-view');
+        const titleDisplay = document.getElementById('side-view-title');
+
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetView = btn.dataset.view;
+                const viewName = btn.dataset.name;
+                
+                navBtns.forEach(b => b.classList.remove('active'));
+                views.forEach(v => v.classList.remove('active'));
+
+                btn.classList.add('active');
+                const view = document.getElementById(`side-view-${targetView}`);
+                if (view) view.classList.add('active');
+                
+                if (titleDisplay && viewName) {
+                    titleDisplay.textContent = viewName;
+                }
+            });
+        });
+    }
+
     async function init() {
         bindLocationButtons();
+        initSideNav();
         if (!mainsheet) return;
         const defaultLocation = mainsheet.dataset.defaultLocation || 'loc1';
         const extraLocation = mainsheet.dataset.extraLocation;

@@ -8,7 +8,9 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
 from localization import Localization
-import logic
+from logic import PlayerState
+
+player_state = PlayerState(player_id=1, current_location_id="loc1", health = 3, health_max = 5)
 
 
 app = FastAPI()
@@ -62,6 +64,7 @@ async def read_items(request: Request):
             "request": request,
             "lang": lang,
             "loc": loc,
+            "player_state": player_state,
             "active_location": active_location,
             "extra_location": extra_location,
             "locations": list(LOCATIONS.keys()),

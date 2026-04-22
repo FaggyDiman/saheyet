@@ -1,0 +1,29 @@
+.text-light-green {
+    color: #6bbd6b; /* Темнее #90ee90 */
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-green {
+    color: #006400; /* Темнее #008000 */
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-yellow {
+    color: #cccc00; /* Темнее #ffff00 */
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-orange {
+    color: #cc8400; /* Темнее #ffa500 */
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-red {
+    color: #cc0000; /* Темнее #ff0000 */
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
