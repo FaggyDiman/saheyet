@@ -15,3 +15,25 @@ loc_forest_title: "forest"
 loc_forest_desc: "dios est forestah"
 loc_forest_to_cave: "but i lov roks"
 loc_cave_to_forest: "actuly i laev wood"
+
+#
+# DAYTIME
+#
+
+daytime_morning: "Morning"
+daytime_day: "Day"
+daytime_evening: "Evening"
+daytime_night: "Night"
+
+
+#
+# CHARACTERS
+#
+
+# General
+npc_h_very_good: "Vigorous"
+npc_h_good: "Lively"
+npc_h_normal: "Healthy"
+npc_h_bad: "Wounded"
+npc_h_very_bad: "Severely Wounded"
+npc_h_dead: "Dead"

@@ -16,3 +16,30 @@ loc_forest_title: "Лес"
 loc_forest_desc: "Это лес."
 loc_forest_to_cave: "Уйти жить в пещеру"
 loc_cave_to_forest: "Уйти жить в лес"
+
+#
+# ВРЕМЕНА ДНЯ
+#
+
+daytime_morning: "Утро"
+daytime_day: "День"
+daytime_evening: "Вечер"
+daytime_night: "Ночь"
+
+#
+# ПЕРСОНАЖИ
+#
+
+#Универсал 
+npc_h_very_good: "Полон сил"
+npc_h_good: "Бодр"
+npc_h_normal: "Здоров"
+npc_h_bad: "Ранен"
+npc_h_very_bad: "Тяжело ранен"
+npc_h_dead: "Мёртв"
+
+
+#Виктор
+
+npc_viktor_fullname: "Виктор Дарда"
+npc_viktor_name: "Виктор"

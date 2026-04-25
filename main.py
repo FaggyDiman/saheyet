@@ -115,3 +115,6 @@ async def save_location(request: LocationSaveRequest):
     response.set_cookie(key="extra_loc", value=extra_location, max_age=31536000, path="/")
     return response
 
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return RedirectResponse(url="/static/images/favicon.png")

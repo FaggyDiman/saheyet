@@ -1,6 +1,11 @@
 {% from 'macros.html' import loc_button %}
 <div class="location-fragment">
     <h1>{{ loc.t("loc_cave_title") }}</h1>
-    <p>{{ loc.t("loc_cave_desc") }}</p>
-    {{ loc_button('loc1', 'replace', loc.t("loc_cave_to_forest")) }}
+    <p>{{ loc.t("loc_cave_desc", okay="123") }}</p>
+    <div class="btn-group row">
+        {{ loc_button('loc1', 'replace', loc.t("loc_cave_to_forest")) }}
+        {{ loc_button('loc1', 'replace', loc.t("loc_cave_to_forest")) }}
+        {{ loc_button('loc1', 'replace', loc.t("loc_cave_to_forest")) }}
+    </div>
+
 </div>

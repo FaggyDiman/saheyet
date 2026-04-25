@@ -39,9 +39,9 @@ class Localization:
         if text is None:
             text = self.default_translations.get(key, f"[{key}]")
 
-        if kwargs:
+        if kwargs and isinstance(text, str):
             try:
                 text = text.format(**kwargs)
-            except KeyError:
+            except (KeyError, ValueError, IndexError):
                 pass
         return text

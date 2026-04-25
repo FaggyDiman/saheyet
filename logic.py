@@ -1,6 +1,7 @@
 from pydantic import BaseModel, model_validator
 from typing import List, Optional, Dict
 
+
 class PlayerState(BaseModel):
     player_id: int
     current_location_id: str
@@ -47,4 +48,22 @@ class PlayerState(BaseModel):
             case _: return "text-yellow"
 
 class GameState(BaseModel):
+    money: int
+    days_counter: int
+    daytime_counter: str # "Morning" / "Noon" / "Afternoon" / "Night"
     pass
+
+
+class Character(BaseModel):
+    entry: str
+    
+
+class Location(BaseModel):
+    id: str
+    name: str
+    description: str
+    connections: List[str] = []
+    metadata: Dict = {}
+
+class BattleLocation(Location):
+    enemy: Character

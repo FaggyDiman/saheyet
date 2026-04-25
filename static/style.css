@@ -116,6 +116,53 @@ body {
     padding: 1rem;
 }
 
+.btn-group {
+    display: flex;
+    gap: 0;
+    margin-top: 1.5rem;
+}
+
+.btn-group.row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.btn-group.column {
+    flex-direction: column;
+}
+
+.btn-group .loc-btn {
+    margin: 0; /* Сбрасываем стандартные отступы внутри группы */
+    border-radius: 0;
+}
+
+/* Скругления для крайних кнопок в строке */
+.btn-group.row .loc-btn:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.btn-group.row .loc-btn:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+/* Скругления для крайних кнопок в столбце */
+.btn-group.column .loc-btn:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.btn-group.column .loc-btn:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+/* Убираем двойные границы */
+.btn-group.row .loc-btn + .loc-btn {
+    border-left: none;
+}
+
+.btn-group.column .loc-btn + .loc-btn {
+    border-top: none;
+}
+
 /* --- МОБИЛЬНЫЕ ЭЛЕМЕНТЫ --- */
 .menu-toggle {
     display: none; /* Скрыта на ПК */
@@ -173,6 +220,25 @@ body {
 
     .overlay.active {
         display: block;
+    }
+
+    .btn-group.row {
+        flex-direction: column;
+    }
+
+    /* Перенастройка скруглений и границ для мобильной версии (строки превращаются в столбцы) */
+    .btn-group.row .loc-btn {
+        border-radius: 0;
+        border-left: 1px solid rgba(0, 0, 0, 0.25); /* Возвращаем левую границу */
+    }
+    .btn-group.row .loc-btn:first-child {
+        border-radius: 4px 4px 0 0;
+    }
+    .btn-group.row .loc-btn:last-child {
+        border-radius: 0 0 4px 4px;
+    }
+    .btn-group.row .loc-btn + .loc-btn {
+        border-top: none; /* Убираем верхнюю границу вместо левой */
     }
 }
 
