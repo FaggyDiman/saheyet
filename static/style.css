@@ -190,6 +190,18 @@ body {
     box-shadow: 0 12px 25px rgba(0,0,0,0.5);
 }
 
+.portrait-block {
+    text-align: center;
+}
+
+.portrait-commentary {
+    margin-top: 4px; 
+    width: 180px;    
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8rem;
+}
+
 /* --- SIDE NAVIGATION --- */
 .side-nav {
     display: flex;

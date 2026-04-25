@@ -46,3 +46,5 @@ class PlayerState(BaseModel):
             case 1: return "text-red"
             case _: return "text-yellow"
 
+class GameState(BaseModel):
+    pass

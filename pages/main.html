@@ -30,12 +30,17 @@
 
         <!-- Вкладка: Основа -->
         <div id="side-view-status" class="side-view active">
-            <div class="portrait-block">
-                <img src="{{url_for('static', path='images/' + player_state.portrait)}}" class="portrait" alt="Knight" style="width: 180px; height: auto; ">
-                <div style="text-align: center; font-size: 0.8rem; margin-top: 10px;">
-                    <a class="{{ player_state.health_commentary_stylecolor }}">
-                        {{ loc.t(player_state.health_commentary) }}
-                    </a>
+            <div class="status-layout">
+                <div class="portrait-block">
+                    <img src="{{url_for('static', path='images/' + player_state.portrait)}}" class="portrait" alt="Knight" style="width: 180px; height: auto; ">
+                    <div class="portrait-commentary">
+                        <a class="{{ player_state.health_commentary_stylecolor }}">
+                            {{ loc.t(player_state.health_commentary) }}
+                        </a>
+                    </div>
+                </div>
+                <div class="side-info-extra">
+                    <!-- Здесь будет информация, занимающая всё место справа на мобильных -->
                 </div>
             </div>
         </div>

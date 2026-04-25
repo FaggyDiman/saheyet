@@ -10,7 +10,7 @@ from pydantic import BaseModel
 from localization import Localization
 from logic import PlayerState
 
-player_state = PlayerState(player_id=1, current_location_id="loc1", health = 3, health_max = 5)
+player_state = PlayerState(player_id=1, current_location_id="loc1", health = 5, health_max = 5)
 
 
 app = FastAPI()
